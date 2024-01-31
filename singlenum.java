@@ -5,6 +5,6 @@ public class singlenum {
         for(int i=0; i<nums.length; i++) {
             result = result^nums[i];
         }
-    
+   System.out.println(result); 
    }
 }
