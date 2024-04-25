@@ -1,27 +1,45 @@
 import java.util.HashMap;
-import java.util.Map;
 
 public class target {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 4, 8, 16};
-        int target = 20;
-        target t = new target();
-        int[] resultIndices = t.findsoln(arr, target);
-        for (int index : resultIndices) {
-            System.out.print(arr[index] + " ");
-        }
+        System.out.println(Cansum(7, new int[] { 2, 4 },new HashMap<>()));
+        System.out.println(Cansum(7, new int[] { 2, 3, 5 },new HashMap<>()));
+        System.out.println(Cansum(7, new int[] { 5, 7, 4, 3 },new HashMap<>()));
+        System.out.println(Cansum(300, new int[]{7,14}, new HashMap<>()));
     }
 
-    public static int[] findsoln(int[] arr, int target) {
-        Map<Integer, Integer> comp = new HashMap<>();
+    private static boolean Cansum(int targetsum, int[] numbers, HashMap<Integer,Boolean> hashMap) {
+        if (targetsum == 0)
+            return true;
+        if (targetsum < 0)
+            return false;
+        if (hashMap.containsKey(targetsum)) {
+            return hashMap.get(targetsum);
+        }
 
-        for (int i = 0; i < arr.length; i++) {
-            int com = target - arr[i];
-            if (comp.containsKey(com)) {
-                return new int[]{comp.get(com), i};
+        for (int i : numbers) {
+            int remainder=targetsum-i;
+            if (Cansum(remainder, numbers, hashMap)==true) {
+                hashMap.put(targetsum, true);
+                return true;               
             }
-            comp.put(arr[i], i);
         }
-        return new int[0];
+        hashMap.put(targetsum, false);
+        return false;
     }
+
+
+    // private static boolean Cansum(int targetsum, int[] numbers) {
+    //     if (targetsum == 0)
+    //         return true;
+    //     if (targetsum < 0)
+    //         return false;
+    //     for (int i : numbers) {
+    //         int remainder = targetsum - i;
+    //         if (Cansum(remainder, numbers) == true) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 }
