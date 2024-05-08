@@ -1,15 +1,28 @@
 import java.util.Arrays;
 
 public class MajorityElement {
-    // there is a the element that occurs more than 1/2 times...
-    //display that.
     public static void main(String[] args) {
-        // Input 
-        int arr[]={2,2,1,1,1,2,2};
-        //Solution 
-        Arrays.sort(arr);
-        int mid=(arr.length+1)/2;
-        //Display the output.
-        System.out.println("the Majority is: "+arr[mid]);
+        int[] nums = {3, 3, 4, 2, 4, 4, 2, 4, 4};
+        int majority = findMajorityElement(nums);
+        System.out.println("The majority element is: " + majority);
+    }
+    
+    public static int findMajorityElement(int[] nums) {
+        int count = 0;
+        int candidate = 0;
+        
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            
+            if (num == candidate) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        
+        return candidate;
     }
 }
