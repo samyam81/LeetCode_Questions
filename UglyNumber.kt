@@ -1,19 +1,20 @@
 fun main() {
-    println(isUglyNum(6))
-    println(isUglyNum(1))
-    println(isUglyNum(14))
+    println(isUgly(6))
+    println(isUgly(1))
+    println(isUgly(14))
 }
 
-fun isUglyNum(number: Int): Boolean? {
-    if (number==1) return false
-    val factors = intArrayOf(2, 3, 5)
-    var num = number
+    fun isUgly(n: Int): Boolean {
+        if (n <= 0) return false 
+        if (n == 1) return true  
+        val factors = intArrayOf(2, 3, 5)
+        var num = n
 
-    factors.forEach { fac ->
-        while (num % fac == 0) {
-            num /= fac
+        factors.forEach { fac ->
+            while (num % fac == 0) {
+                num /= fac
+            }
         }
-    }
 
-    return num == 1
-}
+        return num == 1
+    }
