@@ -1,3 +1,5 @@
+package Java;
+
 public class GuessGamer extends GuessGame {
     public int guessNumber(int n) {
         int left = 1;

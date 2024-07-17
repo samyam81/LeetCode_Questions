@@ -16,6 +16,6 @@ public class Anagram {
             hi.put(c, hi.getOrDefault(c, 0) + 1);
         }
 
-        return hello.equals(hi)
+        return hello.equals(hi);
     }
 }

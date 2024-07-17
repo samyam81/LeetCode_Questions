@@ -1,3 +1,5 @@
+package Java;
+
 public class Happynumber {
     public static void main(String[] args) {
         int num=7;

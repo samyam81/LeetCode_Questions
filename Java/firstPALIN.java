@@ -1,3 +1,5 @@
+package Java;
+
 public class firstPALIN {
     public static void main(String[] args) {
         String [] str={"abc","car","ada","racecar","cool"};

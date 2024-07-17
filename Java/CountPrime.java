@@ -1,3 +1,5 @@
+package Java;
+
 public class CountPrime {
 
     public int countPrimes(int n) {

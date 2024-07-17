@@ -23,7 +23,7 @@ public class ArrangeCoin{
     }
     
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        ArrangeCoin solution = new ArrangeCoin();
         int n = 5;
         System.out.println(solution.arrangeCoins(n)); // Output: 2
     }

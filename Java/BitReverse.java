@@ -1,3 +1,5 @@
+package Java;
+
 public class BitReverse {
     public int reverseBits(int n) {
         int result = 0;
