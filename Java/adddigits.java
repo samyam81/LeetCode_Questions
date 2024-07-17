@@ -1,3 +1,4 @@
+package Java;
 public class adddigits {
     public static void main(String[] args) {
         int num=83;

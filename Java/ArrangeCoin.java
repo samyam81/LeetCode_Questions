@@ -1,3 +1,4 @@
+package Java;
 public class ArrangeCoin{
     public int arrangeCoins(int n) {
         long left = 0;
